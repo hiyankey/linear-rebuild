@@ -36,7 +36,7 @@ export const Header = () => {
         </Link>
         <nav
           className={classNames(
-            " fixed left-0 top-header-height h-[calc(100vh_-_var(--header-height))] w-full overflow-auto bg-background md:relative md:top-0 md:block md:h-full md:w-auto md:bg-transparent",
+            " fixed left-0 top-header-height h-[calc(100vh_-_var(--header-height))] w-full overflow-auto bg-background pt-[16px] md:relative md:top-0 md:block md:h-full md:w-auto md:bg-transparent md:pt-0",
             hamburgerMenuIsOpen ? "" : "hidden",
           )}
         >
@@ -44,7 +44,7 @@ export const Header = () => {
             className={classNames(
               "flex h-full flex-col px-[20px]  transition-colors md:flex-row md:items-center ",
               "[&_li]:h-header-height  md:[&_li]:ml-6  md:[&_li]:h-full ",
-              "[&_a:hover]:text-grey [&_a]:flex [&_a]:h-full [&_a]:w-full [&_a]:items-center [&_a]:text-lg  md:[&_a]:w-auto md:[&_a]:text-sm",
+              "[&_a:hover]:text-grey [&_a]:flex [&_a]:h-full [&_a]:w-full [&_a]:items-center [&_a]:text-xl  md:[&_a]:w-auto md:[&_a]:text-sm",
             )}
           >
             <li>
