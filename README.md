@@ -1,2 +1,0 @@
-- Run yarn dev on your terminal 
-- view Link 
