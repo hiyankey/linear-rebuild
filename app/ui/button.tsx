@@ -16,25 +16,27 @@ interface ButtonAsButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 type ButtonProps = ButtonBaseProps &
   (ButtonAsAnchorProps | ButtonAsButtonProps);
 
-const buttonClasses = cva("rounded-full inline-flex items-center", {
-  variants: {
-    variant: {
-      primary:
-        "bg-brand-color hover:bg-lighten-brand-color shadow-low shadow-medium shadow-high",
-      secondary:
-        "text-off-white bg-white bg-opacity-10 border border-transparent-white hover:bg-[#fff3] shadow-low shadow-medium shadow-high",
+const buttonClasses = cva(
+  "rounded-full inline-flex items-center shadow-low shadow-medium shadow-high",
+  {
+    variants: {
+      variant: {
+        primary: "bg-brand-color hover:bg-lighten-brand-color ",
+        secondary:
+          "text-off-white bg-white bg-opacity-10 border border-transparent-white hover:bg-[#fff3] ",
+      },
+      size: {
+        sm: "text-xs px-3 h-7",
+        md: "text-sm px-4 h-8",
+        lg: "text-md px-6 h-12",
+      },
     },
-    size: {
-      sm: "text-xs px-3 h-7",
-      md: "text-sm px-4 h-8",
-      lg: "text-md px-6 h-12",
+    defaultVariants: {
+      variant: "primary",
+      size: "md",
     },
   },
-  defaultVariants: {
-    variant: "primary",
-    size: "md",
-  },
-});
+);
 
 export const Button = ({ children, variant, size, ...props }: ButtonProps) => {
   const classes = buttonClasses({ variant, size, className: props.className });
