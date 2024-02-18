@@ -74,7 +74,7 @@ export const Header = () => {
           <Link href="#" className="mr-6">
             Log in
           </Link>
-          <Button>Sign up</Button>
+          <Button href="#">Sign up</Button>
         </div>
         <button
           className="ml-auto md:hidden"
