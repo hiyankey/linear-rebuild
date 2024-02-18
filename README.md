@@ -1,1 +1,2 @@
-            Run script with yarn dev on your terminal and view Link 
+- Run yarn dev on your terminal 
+- view Link 
