@@ -1,13 +1,37 @@
-export const HeroTitle = ({ children }: { children: React.ReactNode }) => {
+import classNames from "classnames";
+
+export const HeroTitle = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
   return (
-    <h1 className="my-5 text-balance text-6xl md:text-7xl lg:text-8xl">
+    <h1
+      className={classNames(
+        " text-gradient my-5 text-balance text-6xl md:text-7xl lg:text-8xl",
+        className,
+      )}
+    >
       {children}
     </h1>
   );
 };
-export const HeroSubtile = ({ children }: { children: React.ReactNode }) => {
+export const HeroSubtile = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
   return (
-    <p className="text-primary-text mb-8 text-balance text-lg lg:text-xl">
+    <p
+      className={classNames(
+        "mb-8 text-balance text-lg text-primary-text lg:text-xl",
+        className,
+      )}
+    >
       {children}
     </p>
   );

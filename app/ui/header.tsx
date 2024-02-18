@@ -26,9 +26,9 @@ export const Header = () => {
       window.removeEventListener("orientationchange", closeHambugerMenu);
       window.removeEventListener("resize", closeHambugerMenu);
     };
-  }, []);
+  }, [setHamburgerMenuIsOpen]);
   return (
-    <header className="fixed left-0 top-0 h-header-height w-full border-b border-transparent-white bg-transparent backdrop-blur-[12px]">
+    <header className=" fixed  left-0 top-0 z-50 h-header-height w-full border-b border-transparent-white bg-transparent backdrop-blur-[12px]">
       <Container className="relative flex h-full items-center text-sm">
         <Link href="/" className="flex items-center">
           <Logo className="mr-3 h-4 w-4" />

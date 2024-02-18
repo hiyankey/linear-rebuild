@@ -1,8 +1,20 @@
 import { VariantProps, cva } from "class-variance-authority";
+import { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
 import Link from "next/link";
-interface ButtonProps extends VariantProps<typeof buttonClasses> {
+type ButtonBaseProps = VariantProps<typeof buttonClasses> & {
   children: React.ReactNode;
+};
+
+interface ButtonAsAnchorProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+  href: string;
 }
+
+interface ButtonAsButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  href?: never;
+}
+
+type ButtonProps = ButtonBaseProps &
+  (ButtonAsAnchorProps | ButtonAsButtonProps);
 
 const buttonClasses = cva("rounded-full inline-flex items-center", {
   variants: {
@@ -25,11 +37,15 @@ const buttonClasses = cva("rounded-full inline-flex items-center", {
 });
 
 export const Button = ({ children, variant, size, ...props }: ButtonProps) => {
-  return (
-    <Link {...props} href="#" className={buttonClasses({ variant, size })}>
-      {children}
-    </Link>
-  );
+  const classes = buttonClasses({ variant, size, className: props.className });
+
+  if ("href" in props && props.href !== undefined) {
+    return (
+      <Link {...props} className={classes}>
+        {children}
+      </Link>
+    );
+  }
 };
 
 export const IconWrapper = ({ children }: { children: React.ReactNode }) => {
