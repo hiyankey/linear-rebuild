@@ -6,8 +6,8 @@ import { ChevronIcon } from "./ui/icons/chevron";
 import { HeroImage } from "./ui/hero-image";
 export default function Home() {
   return (
-    <main className=" min-h-screen bg-page-gradient pt-[var(--header-height)]">
-      <Container className="overflow-hidden py-[64px] ">
+    <main className=" min-h-screen overflow-hidden bg-page-gradient pt-[var(--header-height)] ">
+      <Container className="py-[64px] ">
         <Hero>
           <Button
             variant="secondary"
