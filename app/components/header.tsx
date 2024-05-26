@@ -8,7 +8,7 @@ import { useState } from 'react'
 import { cx } from '../lib/cx'
 
 export default function Header() {
-  const [hamburgerIsOpen, setHamburgerIsOpen] = useState(false)
+  const [hamburgerMenuIsOpen, sethamburgerMenuIsOpen] = useState(false)
   return (
     <header className='border-b border-white/8 bg-transparent backdrop-blur-sm fixed top-0 left-0 w-full text-md font-medium'>
       <Container className=' h-header-height flex  items-center '>
@@ -17,20 +17,20 @@ export default function Header() {
         </Link>
         <div
           className={cx(
-            'transition-[visibility] md:visible',
-            hamburgerIsOpen ? 'visible' : 'invisible delay-500'
+            'transition-[visibility] ',
+            hamburgerMenuIsOpen ? 'visible' : 'invisible delay-500'
           )}
         >
           <nav
             className={cx(
-              'h-[calc(100vh-var(--header-height))] md:block fixed md:relative top-header-height md:top-0 left-0 w-full overflow-auto bg-main md:bg-transparent md:overflow-hidden transition-opacity duration-500 md:opacity-100',
-              hamburgerIsOpen ? 'opacity-100' : 'opacity-0'
+              'h-[calc(100vh-var(--header-height))] md:block fixed md:relative top-header-height md:top-0 left-0 w-full overflow-auto bg-main md:bg-transparent md:overflow-hidden transition-opacity duration-500 md:transition-none md:opacity-100',
+              hamburgerMenuIsOpen ? 'opacity-100' : 'opacity-0'
             )}
           >
             <ul
               className={cx(
-                'flex flex-col md:flex-row md:items-center h-full [&_a]:text-lg  md:[&_a]:text-sm mx-5  md:[&_li]:ml-8 hover:[&_a]:text-white/[49%] [&_a]:transition-[colors,transform] [&_li]:h-header-height md:[&_li]:h-full [&_li]:flex   [&_li]:items-center [&_li]:border-b [&_li]:border-white/8 md:[&_li]:border-none  [&_a]:translate-y-8  md:[&_a]:translate-y-0 [&_a]:duration-300 ease-in',
-                hamburgerIsOpen && ' [&_a]:translate-y-0'
+                'flex flex-col md:flex-row md:items-center h-full  [&_a]:text-lg  md:[&_a]:text-sm mx-5  md:[&_li]:ml-8 hover:[&_a]:text-white/[49%] [&_a]:transition-[colors,transform] [&_li]:h-header-height md:[&_li]:h-full [&_li]:flex  [&_li]:items-center [&_li]:border-b [&_li]:border-white/8 md:[&_li]:border-none  [&_a]:translate-y-8  md:[&_a]:translate-y-0 [&_a]:duration-300 ease-in  [&_a]:md:transition-colors',
+                hamburgerMenuIsOpen && ' [&_a]:translate-y-00'
               )}
             >
               <li>
@@ -68,7 +68,7 @@ export default function Header() {
         </div>
         <button
           className='ml-6 block md:hidden'
-          onClick={() => setHamburgerIsOpen((open) => !open)}
+          onClick={() => sethamburgerMenuIsOpen((open) => !open)}
         >
           <span className='sr-only'>Toggle Menu</span>
           <Hamburger />
