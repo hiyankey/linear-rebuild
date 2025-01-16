@@ -1,18 +1,15 @@
 type HeroProps = {
 	children: React.ReactNode;
 };
-type HeroTitleProps = {
-	children: React.ReactNode;
-};
-type HeroSubtitleProps = {
+type HeroElementProps = {
 	children: React.ReactNode;
 };
 
-export function HeroTitle({ children }: HeroTitleProps) {
-	return <h1 className="text-4xl">{children}</h1>;
+export function HeroTitle({ children }: HeroElementProps) {
+	return <h1 className="text-4xl my-6">{children}</h1>;
 }
-export function HeroSubtitle({ children }: HeroSubtitleProps) {
-	return <p className="text-lg">{children}</p>;
+export function HeroSubtitle({ children }: HeroElementProps) {
+	return <p className="text-lg mb-12">{children}</p>;
 }
 export function Hero({ children }: HeroProps) {
 	return <div className="text-center">{children}</div>;
