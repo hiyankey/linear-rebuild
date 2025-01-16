@@ -4,6 +4,6 @@ type Props = {
 };
 export function Container({ children, className }: Props) {
 	return (
-		<div className={`${className} max-w-[120rem] mx-auto`}>{children}</div>
+		<div className={`${className} max-w-[120rem] mx-auto px-8`}>{children}</div>
 	);
 }

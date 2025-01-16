@@ -4,7 +4,7 @@ import { Hero, HeroSubtitle, HeroTitle } from "./components/hero";
 
 export default function Home() {
 	return (
-		<main className="pt-[var(--header-height)]">
+		<main className="pt-header-height">
 			<Container>
 				<Hero>
 					<HeroTitle>

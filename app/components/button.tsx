@@ -6,23 +6,26 @@ interface ButtonProps extends VariantProps<typeof buttonClasses> {
 	className?: string;
 }
 
-const buttonClasses = cva("inline-flex rounded-full items-center", {
-	variants: {
-		variant: {
-			primary: "bg-primary-gradient",
-			secondary: "",
+const buttonClasses = cva(
+	"inline-flex rounded-full items-center whitespace-nowrap",
+	{
+		variants: {
+			variant: {
+				primary: "bg-primary-gradient",
+				secondary: "",
+			},
+			size: {
+				sm: "text-xs px-3 h-6",
+				md: "text-sm px-4 h-8",
+				lg: "text-lg px-6 h-12",
+			},
 		},
-		size: {
-			sm: "text-xs px-3 h-6",
-			md: "text-sm px-4 h-8",
-			lg: "text-lg px-6 h-12",
+		defaultVariants: {
+			variant: "primary",
+			size: "md",
 		},
 	},
-	defaultVariants: {
-		variant: "primary",
-		size: "md",
-	},
-});
+);
 export function Button({
 	children,
 	href,

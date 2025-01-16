@@ -11,6 +11,7 @@ export default {
 					main: "#000212",
 				},
 				grey: "#858699",
+				"grey-dark": "#222326",
 			},
 		},
 		fontFamily: {
@@ -41,6 +42,7 @@ export default {
 			10: "4rem",
 			11: "4.4rem",
 			12: "4.8rem",
+			"header-height": "var(--header-height)",
 		},
 		backgroundImage: {
 			"primary-gradient":
