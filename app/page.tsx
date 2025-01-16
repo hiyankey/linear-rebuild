@@ -16,8 +16,8 @@ export default function Home() {
 					</HeroSubtitle>
 					<Image
 						src={"/hero.webp"}
-						width={3840}
-						height={2175}
+						width={1000}
+						height={700}
 						alt="Hero image"
 					/>
 				</Hero>
