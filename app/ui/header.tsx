@@ -41,7 +41,7 @@ export default function Header() {
               className={cx(
                 'flex h-full flex-col md:flex-row md:items-center',
                 ' md:[&_li]:ml-6 md:[&_li]:nth-[3]:hidden md:[&_li]:nth-[4]:hidden md:[&_li]:nth-[5]:hidden lg:[&_li]:nth-[3]:block lg:[&_li]:nth-[4]:block lg:[&_li]:nth-[5]:block',
-                'ease-in [&_a:hover]:text-white/60 [&_a]:flex [&_a]:h-[var(--header-height)] [&_a]:w-full [&_a]:translate-y-8 [&_a]:items-center [&_a]:pl-3 [&_a]:text-md [&_a]:transition-[color,transform] [&_a]:duration-300 md:[&_a]:inline md:[&_a]:h-auto md:[&_a]:w-auto md:[&_a]:translate-y-0 md:[&_a]:pl-0 md:[&_a]:text-sm md:[&_a]:transition-colors',
+                'ease-in [&_a:hover]:text-white/60 [&_a]:flex [&_a]:h-[var(--header-height)] [&_a]:w-full [&_a]:translate-y-8 [&_a]:items-center [&_a]:pl-3 [&_a]:text-md [&_a]:transition-[color,transform] [&_a]:duration-300 md:[&_a]:h-auto md:[&_a]:w-auto md:[&_a]:translate-y-0 md:[&_a]:pl-0 md:[&_a]:text-sm md:[&_a]:transition-colors',
                 menuIsOpen && '[&_a]:translate-y-0'
               )}
             >

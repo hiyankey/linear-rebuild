@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 type Props = {
   className?: string;
+  // biome-ignore lint/correctness/noUndeclaredVariables: <explanation>
   children: React.ReactNode;
   href: string;
 } & VariantProps<typeof buttonVariants>;

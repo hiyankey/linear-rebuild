@@ -3,13 +3,14 @@ import Header from '@/ui/header';
 import { Hero, HeroSubtitle, HeroTitle } from '@/ui/hero';
 import Image from 'next/image';
 import { Button } from './ui/button';
+import Footer from './ui/footer';
 
 export default function Home() {
   return (
-    <div className="grid min-h-screen w-screen grid-rows-[auto_auto_1fr]">
+    <div className="grid min-h-dvh w-screen grid-rows-[auto_1fr_auto]">
       <Header />
       <main className=" pt-[var(--header-height)]">
-        <Container className="flex flex-col items-center pt-[96px]">
+        <Container className="flex flex-col items-center justify-between pt-[96px]">
           <Hero className="flex flex-col items-center">
             <HeroTitle className="mb-6">
               Linear is a better way
@@ -37,9 +38,7 @@ export default function Home() {
           </Hero>
         </Container>
       </main>
-      <footer>
-        <Container>footer</Container>
-      </footer>
+      <Footer />
     </div>
   );
 }

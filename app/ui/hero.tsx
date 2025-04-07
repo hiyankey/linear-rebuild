@@ -2,6 +2,7 @@ import { cx } from '@/lib/utils';
 
 type Props = {
   className?: string;
+  // biome-ignore lint/correctness/noUndeclaredVariables: <explanation>
   children: React.ReactNode;
 };
 
