@@ -1,7 +1,7 @@
 import { cx } from '@/lib/utils';
 import Link from 'next/link';
-import Link from 'next/link';
-import Link from 'next/link';
+import Container from './container';
+import { Logo } from './icons/logo';
 
 const navLinks = [
   { title: 'Features', href: '#' },
