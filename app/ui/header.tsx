@@ -1,5 +1,6 @@
 import { cx } from '@/lib/utils';
 import Link from 'next/link';
+import { Button } from './button';
 import Container from './container';
 import { Logo } from './icons/logo';
 
