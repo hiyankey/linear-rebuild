@@ -1,26 +1,25 @@
 import { cx } from '@/lib/utils';
 import { type VariantProps, cva } from 'class-variance-authority';
 import Link from 'next/link';
+import type { PropsWithChildren } from 'react';
 
 type Props = {
   className?: string;
-  // biome-ignore lint/correctness/noUndeclaredVariables: <explanation>
-  children: React.ReactNode;
   href: string;
-} & VariantProps<typeof buttonVariants>;
+} & PropsWithChildren &
+  VariantProps<typeof buttonVariants>;
 
 const buttonVariants = cva(
-  'inline-flex items-center hover:text-shadow-lg hover:shadow-lg',
+  'inline-flex items-center text-shadow-sm shadow-md',
   {
     variants: {
       variant: {
-        primary: 'bg-accent ',
+        primary: 'bg-accent',
         secondary: 'bg-white/10',
       },
       size: {
-        sm: 'h-[20px] rounded-sm px-2 text-xs',
-        md: 'h-[28px] rounded-md px-3 text-sm',
-        lg: 'h-[36px] rounded-lg px-4 text-md',
+        sm: 'h-7 rounded-md px-3 text-sm',
+        md: 'h-9 rounded-lg px-4 text-md',
       },
     },
     defaultVariants: {
@@ -29,7 +28,8 @@ const buttonVariants = cva(
     },
   }
 );
-export function Button({ children, className, href, variant, size }: Props) {
+
+export function Button({ className, children, href, size, variant }: Props) {
   return (
     <Link
       href={href}
