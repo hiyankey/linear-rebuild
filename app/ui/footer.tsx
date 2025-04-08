@@ -51,11 +51,11 @@ export default function Footer() {
         <div className="flex h-full items-center text-sm text-white/70">
           <Logo className="mr-3 size-4" /> Linear - Designed worldwide
         </div>
-        <div className="mt-6 flex flex-wrap text-sm md:mt-0">
+        <div className="flex flex-wrap text-sm">
           {footerLinks.map((column, index) => (
             <div
               key={index}
-              className="mb-6 min-w-[50%] md:mb-0 md:min-w-[160px]"
+              className="mt-10 min-w-[50%] md:mt-0 md:min-w-[160px]"
             >
               <h3 className="mb-3 font-medium">{column.title}</h3>
               <ul className="text-white/70">
