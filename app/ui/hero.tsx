@@ -6,10 +6,18 @@ type Props = {
 } & PropsWithChildren;
 
 export function HeroTitle({ children, className }: Props) {
-  return <h3 className={cx(className, 'text-center text-4xl')}>{children}</h3>;
+  return (
+    <h3 className={cx(className, 'text-center text-3xl md:text-4xl')}>
+      {children}
+    </h3>
+  );
 }
 export function HeroSubtitle({ children, className }: Props) {
-  return <p className={cx(className, 'text-center text-lg')}>{children}</p>;
+  return (
+    <p className={cx(className, 'text-center text-md md:text-lg')}>
+      {children}
+    </p>
+  );
 }
 export function Hero({ children, className }: Props) {
   return <div className={cx(className)}>{children}</div>;

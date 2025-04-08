@@ -12,11 +12,13 @@ export default function Home() {
       <Hero className="mt-[var(--header-height)]">
         <Container className="flex flex-col items-center pt-[96px]">
           <HeroTitle className="mb-[24px]">
-            Linear is a better way <br /> to build products
+            Linear is a better way{' '}
+            <br className="hidden text-balance md:block" /> to build products
           </HeroTitle>
           <HeroSubtitle className="mb-[32px] text-white/70">
             Meet the new standard for modern software development.
-            <br /> Streamline issues, sprints, and product roadmaps.
+            <br className="hidden text-balance md:block" /> Streamline issues,
+            sprints, and product roadmaps.
           </HeroSubtitle>
           <Button href="#" className="mb-[64px]">
             Get started

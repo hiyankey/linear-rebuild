@@ -1,5 +1,7 @@
+'use client';
 import { cx } from '@/lib/utils';
 import Link from 'next/link';
+import { useState } from 'react';
 import { Button } from './button';
 import Container from './container';
 import { Hamburger } from './icons/hamburger';
@@ -15,29 +17,42 @@ const navLinks = [
   { title: 'Company', href: '#' },
 ];
 export function Header() {
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
   return (
     <header className="fixed top-0 left-0 h-[var(--header-height)] w-full border-white/8 border-b bg-transparent backdrop-blur-sm">
-      <Container className="flex h-full items-center">
+      <Container className="flex h-full md:items-center">
         <Link href={'/'} className="flex items-center">
           <Logo className="mr-3 size-4" /> Linear
         </Link>
-        <nav className="hidden h-full md:block ">
-          <ul
+        <div
+          className={cx(
+            'transition-[visibility] md:visible',
+            menuIsOpen ? 'visible' : 'invisible delay-500'
+          )}
+        >
+          <nav
             className={cx(
-              'flex h-full items-center',
-              'md:[&_li]:nth-[3]:hidden md:[&_li]:nth-[4]:hidden md:[&_li]:nth-[5]:hidden lg:[&_li]:nth-[3]:block lg:[&_li]:nth-[4]:block lg:[&_li]:nth-[5]:block',
-              '[&_a:hover]:text-white/70 [&_a]:ml-6 [&_a]:text-sm [&_a]:transition-colors'
+              'fixed top-[var(--header-height)] left-0 h-[calc(100vh-var(--header-height))] w-full bg-background transition-opacity duration-500 ease-in md:relative md:top-0 md:block md:h-full md:w-auto md:bg-transparent md:opacity-100',
+              menuIsOpen ? 'opacity-100' : 'opacity-0'
             )}
           >
-            {navLinks.map((link, index) => (
-              <li key={index}>
-                <Link href={link.href}>{link.title}</Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+            <ul
+              className={cx(
+                'flex h-full flex-col md:flex-row md:items-center',
+                '[&_li]:h-auto md:[&_li]:nth-[3]:hidden md:[&_li]:nth-[4]:hidden md:[&_li]:nth-[5]:hidden lg:[&_li]:nth-[3]:block lg:[&_li]:nth-[4]:block lg:[&_li]:nth-[5]:block',
+                'text-lg [&_a:hover]:text-white/70 [&_a]:flex [&_a]:h-[var(--header-height)] [&_a]:items-center [&_a]:px-3.5 [&_a]:transition-colors md:[&_a]:ml-6 md:[&_a]:inline md:[&_a]:h-auto md:[&_a]:text-sm'
+              )}
+            >
+              {navLinks.map((link, index) => (
+                <li key={index}>
+                  <Link href={link.href}>{link.title}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
 
-        <div className="ml-auto space-x-3">
+        <div className="ml-auto flex items-center space-x-3">
           <Button href="#" size={'sm'} variant={'secondary'}>
             Log in
           </Button>
@@ -45,9 +60,13 @@ export function Header() {
             sign up
           </Button>
         </div>
-        <div className="ml-6 md:hidden">
+        <button
+          type="button"
+          className="ml-6 md:hidden"
+          onClick={() => setMenuIsOpen((prev) => !prev)}
+        >
           <Hamburger />
-        </div>
+        </button>
       </Container>
     </header>
   );
