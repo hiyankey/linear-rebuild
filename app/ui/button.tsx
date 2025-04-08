@@ -10,7 +10,7 @@ type Props = {
   VariantProps<typeof buttonVariants>;
 
 const buttonVariants = cva(
-  'inline-flex items-center text-shadow-sm shadow-md',
+  'inline-flex items-center text-nowrap hover:text-shadow-sm hover:shadow-md',
   {
     variants: {
       variant: {

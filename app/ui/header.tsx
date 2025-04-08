@@ -2,6 +2,7 @@ import { cx } from '@/lib/utils';
 import Link from 'next/link';
 import { Button } from './button';
 import Container from './container';
+import { Hamburger } from './icons/hamburger';
 import { Logo } from './icons/logo';
 
 const navLinks = [
@@ -20,8 +21,14 @@ export function Header() {
         <Link href={'/'} className="flex items-center">
           <Logo className="mr-3 size-4" /> Linear
         </Link>
-        <nav className="h-full">
-          <ul className={cx('flex h-full items-center')}>
+        <nav className="hidden h-full md:block ">
+          <ul
+            className={cx(
+              'flex h-full items-center',
+              'md:[&_li]:nth-[3]:hidden md:[&_li]:nth-[4]:hidden md:[&_li]:nth-[5]:hidden lg:[&_li]:nth-[3]:block lg:[&_li]:nth-[4]:block lg:[&_li]:nth-[5]:block',
+              '[&_a:hover]:text-white/70 [&_a]:ml-6 [&_a]:text-sm [&_a]:transition-colors'
+            )}
+          >
             {navLinks.map((link, index) => (
               <li key={index}>
                 <Link href={link.href}>{link.title}</Link>
@@ -37,6 +44,9 @@ export function Header() {
           <Button href="#" size={'sm'}>
             sign up
           </Button>
+        </div>
+        <div className="ml-6 md:hidden">
+          <Hamburger />
         </div>
       </Container>
     </header>
