@@ -40,7 +40,7 @@ export function Header() {
               className={cx(
                 'flex h-full flex-col md:flex-row md:items-center',
                 '[&_li]:h-auto md:[&_li]:nth-[3]:hidden md:[&_li]:nth-[4]:hidden md:[&_li]:nth-[5]:hidden lg:[&_li]:nth-[3]:block lg:[&_li]:nth-[4]:block lg:[&_li]:nth-[5]:block',
-                'text-lg [&_a:hover]:text-white/70 [&_a]:flex [&_a]:h-[var(--header-height)] [&_a]:items-center [&_a]:px-3.5 [&_a]:transition-colors md:[&_a]:ml-6 md:[&_a]:inline md:[&_a]:h-auto md:[&_a]:text-sm'
+                'px-3.5 text-lg [&_a:hover]:text-white/70 [&_a]:flex [&_a]:h-[var(--header-height)] [&_a]:items-center [&_a]:transition-colors md:[&_a]:ml-6 md:[&_a]:inline md:[&_a]:h-auto md:[&_a]:px-0 md:[&_a]:text-sm'
               )}
             >
               {navLinks.map((link, index) => (
